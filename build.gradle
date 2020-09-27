@@ -1,0 +1,33 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.3.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    implementation group: 'org.projectlombok', name: 'lombok', version: '0.11.0'
+//    testCompile 'junit:junit:4.11',
+//            'info.cukes:cucumber-java:1.2.5',
+//            'info.cukes:cucumber-junit:1.2.5'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java8
+    testCompile group: 'io.cucumber', name: 'cucumber-java', version: '2.3.1'
+    testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '2.3.1'
+
+}
+
+test {
+    useJUnitPlatform()
+}
