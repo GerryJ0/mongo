@@ -17,7 +17,7 @@ pipeline {
       steps {
         // run Gradle to execute compile and unit testing
         echo 'Building...'
-        sh 'gradle clean compileJava test'
+        bat 'gradle clean compileJava test'
       }
     }
   }
