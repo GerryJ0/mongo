@@ -1,9 +1,10 @@
 pipeline {
-  agent { label 'worker_node1' }
+
   stages {
     stage('Source') { // Get code
       steps {
         // get code from our Git repository
+        echo 'Getting Source...'
         git 'https://github.com/GerryJ0/mongo'
       }
     }
@@ -13,6 +14,7 @@ pipeline {
       }
       steps {
         // run Gradle to execute compile and unit testing
+        echo 'Building...'
         sh 'gradle clean compileJava test'
       }
     }
