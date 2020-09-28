@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Source') { // Get code
       steps {
-        // get code from our Git repository
+        // get code from our Git repository please :)
         echo 'Getting Source...'
         git 'https://github.com/GerryJ0/mongo'
       }
